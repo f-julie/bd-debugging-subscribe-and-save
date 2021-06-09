@@ -1,15 +1,5 @@
 # Subscribe And Save Debugging
 
-**branch-name: debugging-classroom**
-**RDE workflows:**
-- Just `rde wflow run` to initially build the package
-
-## Preliminary: Set the project working directory in IntelliJ
-
-Follow the second bullet in the Troubleshooting below to set
-the working directory to the 'module' level. This will let
-IntelliJ find the data files we're using today.
-
 ## Background
 
 This Subscribe and Save MLP (Minimum Loveable Product) provides the functionality to create subscriptions and retrieve 
@@ -29,9 +19,9 @@ IntelliJ plugins](https://w.amazon.com/bin/view/Amazon_Technical_Academy/Interna
 Now that we are familiar with the class structure, we will get started in the really awesome debug tool someone made
 for us! Open up `SubscriptionDebugUtil`, which is located in this java package, and give it a spin by running the `main` 
 method. (That little green arrow in the left margin will run it for you.) This will start up the debug tool and ask you  
-you what action you would like to take. Go ahead and try to create a `Subscription` by typing in the `SUBSCRIBE` command 
-and then entering some bogus data. Did it work? Did you see the tool go
-all angry and spit out a bunch of red text? You likely saw an
+you what action you would like to take. Go ahead and try to create a `Subscription` by typing in the `SUBSCRIBE` command and then entering some bogus data. You can use the Data at the bottom of this README file for `Customer id` and `asin`.
+ 
+ Did it work? Did you see the tool go all angry and spit out a bunch of red text? You likely saw an
 `IllegalArgumentException` with a message letting you know 
 that you didn't provide all the right information.
 
@@ -59,7 +49,7 @@ Now, let's write a test case that would have caught the bug you just discovered.
 We'd like an error message something more like "Unrecognized ASIN", and perhaps the
 offending ASIN itself.
 
-1. Create a new file: src/com/amazon/ata/debugging/classroom/subscribeandsave/bug_1_test_case.md
+1. Create a new file: tst/com/amazon/ata/debugging/subscribeandsave/bug_1_test_case.md
 1. Paste in the template below and add the *expected* behavior in the case you found (the bug will violate this)
 
 ```
@@ -116,7 +106,7 @@ sure that a similar bug doesn't return.)
 ### Write the test case
 Now, let's write a test case that would have caught the bug you just discovered.
 
-1. Create a new file: src/com/amazon/ata/debugging/classroom/subscribeandsave/bug_2_test_case.md
+1. Create a new file: tst/com/amazon/ata/debugging/subscribeandsave/bug_2_test_case.md
 1. Paste in the template below and add the *expected* behavior in the case you found (the bug will violate this)
 
 ```
@@ -175,7 +165,7 @@ Go take a look and see if you can figure out what is going on.
 
 Now, let's write a test case that would have caught the bug you just discovered.
 
-1. Create a new file: src/com/amazon/ata/debugging/classroom/subscribeandsave/bug_3_test_case.md
+1. Create a new file: tst/com/amazon/ata/debugging/subscribeandsave/bug_3_test_case.md
 1. Paste in the template below and add the *expected* behavior in the case you found (the bug will violate this)
 
 ```
@@ -263,7 +253,7 @@ you with some catalog data, a list of products along with their asin's and SNS e
   (either from running tests or using the DebugUtil), you can reset the "datastore" to its original
   state (you'll probably need to do this between test runs). This tells git to restore a particular
   file to the state it was in at the last commit in your repository:
-    * `git checkout resources/debugging/classroom/subscribeandsave/subscriptions.csv`
+    * `git checkout resources/subscriptions.csv`
     * (Or you can use the contents of subscriptions.csv.restore to replace subscriptions.csv)
 * If you get an error mentioning failing to connect to Identity Services or failing to find a file at ./resources/...
   or ./tst/... To get this working using the "play" button in IntelliJ, you will need to go through the following steps:
@@ -279,8 +269,7 @@ you with some catalog data, a list of products along with their asin's and SNS e
        Welcome to the SNS debug util. You can create and look up subscriptions here.
        ```
 * If you get JSON parsing errors (complaining about unexpected EOF or something), check
-  your resources/debugging/classroom/subscribeandsave/catalog.json file. Are each
-  product on one line, or is there one line per attribute of each product? If split
+  your resources/catalog.json file. Are each product on one line, or is there one line per attribute of each product? If split
   across lines:
   1. Right click on the file and click "Mark as plain text"
   1. Edit the file so that there is one { ... } per line (there should be 6 of them)
