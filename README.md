@@ -1,5 +1,7 @@
 # Subscribe And Save Debugging
 
+**GitHub repo:** [ebd-debugging-subscribe-and-save](https://github.com/LambdaSchool/ebd-debugging-subscribe-and-save)
+
 ## Background
 
 This Subscribe and Save MLP (Minimum Loveable Product) provides the functionality to create subscriptions and retrieve 
