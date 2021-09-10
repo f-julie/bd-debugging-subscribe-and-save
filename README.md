@@ -1,31 +1,27 @@
 # Subscribe And Save Debugging
 
+## Gitrepo
+
 **GitHub repo:** [ebd-debugging-subscribe-and-save](https://github.com/LambdaSchool/ebd-debugging-subscribe-and-save)
 
 ## Background
 
 This Subscribe and Save MLP (Minimum Loveable Product) provides the functionality to create subscriptions and retrieve 
-them. (OR DOES IT???) We are going to be working on debugging a few issues with our service so we can 
-show this beauty off at our team's demo next Friday. 
+them (OR DOES IT???). In this project we are going to be working on debugging a few issues with our service. 
 
 Let's first take a look at the class diagram and discuss it as a class. If you already installed the 
-`PlantUML integration` plugin, you can open Activity_CD.plantuml in IntelliJ. Alternatively, you could open
-[the UML diagram](https://tiny.amazon.com/w94qx12q/DebuggingSNS) in a browser. ***NOTE:*** Light grey classes are classes 
+`PlantUML integration` plugin, you can open Activity_CD.plantuml in IntelliJ. ***NOTE:*** Light grey classes are classes 
 we will assume to be tested and functional today. Feel free to step through them and take a look while debugging, but we
 can assume our bugs aren't hiding in there. 
-
-(You may want to install the IntelliJ PlantUML integration
-plugin. See our updated setting up your laptop How-To page [with info about
-IntelliJ plugins](https://w.amazon.com/bin/view/Amazon_Technical_Academy/Internal/HowTos/SettingUpAMacLaptopForDevelopment/#HPlugins21))
 
 Now that we are familiar with the class structure, we will get started in the really awesome debug tool someone made
 for us! Open up `SubscriptionDebugUtil`, which is located in this java package, and give it a spin by running the `main` 
 method. (That little green arrow in the left margin will run it for you.) This will start up the debug tool and ask you  
-you what action you would like to take. Go ahead and try to create a `Subscription` by typing in the `SUBSCRIBE` command and then entering some bogus data. You can use the Data at the bottom of this README file for `Customer id` and `asin`.
+you what action you would like to take. Go ahead and try to create a `Subscription` by typing in the `SUBSCRIBE` command 
+and then entering some bogus data. **Use the Data at the bottom of this README file for `Customer id` and `asin`.**
  
  Did it work? Did you see the tool go all angry and spit out a bunch of red text? You likely saw an
-`IllegalArgumentException` with a message letting you know 
-that you didn't provide all the right information.
+`IllegalArgumentException` with a message letting you know  that you didn't provide all the right information.
 
 ## Bug 1: Ensure all Illegal Inputs To Subscribe Result in Helpful Error Message
 ### Find the bug
@@ -208,8 +204,9 @@ Open up the Test class that runs tests against the class where you discovered th
 **There might be tests to write in more than one Test class. Where else might you create a test?**
 
 ### Fix the bug
-Go make the fix! Once you have your fix inplace, rerun your tests and watch them pass! Now you can put your feet up and
-relax. Take a break, and we'll squash some more bugs soon!
+Go make the fix! 
+
+Once you have your fix in place, rerun your tests and watch them pass!
 
 ## Data
 Below we have provided you with helpful data for your debugging. We have listed below some valid test Amazon Customers.
